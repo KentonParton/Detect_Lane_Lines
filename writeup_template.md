@@ -43,9 +43,16 @@ Then using the formula y = mx + c, the slope(m), y-intercept(b), y-value(y), and
 
 ### 2. Identify potential shortcomings with your current pipeline
 
-One of the issues of this approach is that performs poorly when the road curves as the line which is drawn is straight. This results in a very inaccurate representation of the road line. Another shortcoming is that changes in road color can have a negative impact on identifying the edges of the lane lines. Furthermore, this approach does not take lane changes into account as the region of interest selects the area infront of the car where the lane lines are present.
+One of the issues of this approach is that it performs poorly when the road curves as the line being drawn is straight. This results in a very inaccurate representation of the road lanes. 
+
+Another shortcoming is that changes in road color can have a negative impact on identifying the edges of the lane lines. This will negatively impact the calculated gradient for the lane line. An example of this would be when the road changes from black to grey or when road signs are present such as ones indicating two lanes merging.
+
+Furthermore, this approach does not take lane changes into account as the region of interest selects the area in-front of the car where the lane lines are present. If the car did change lanes, lines would either be poorly drawn or not at all.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to use color detection and color ranges to create a mask, then apply Canny Edge Detection
+A possible improvement would be to use color detection and color ranges to create a mask, then apply Canny Edge Detection. This would allow for better lane detection. However, this still leaves the issue of curved lines when the road turns. One possible way to reduce the error would be to order the points gathered by hough_lines() then split the data into a series of sections. Then calculate the same y = mx + c line, find its mid-point and store it. Using the series of mid-points, you would then be able to draw a polynomial best fit line.
+
+A particular performance bottleneck in the code is the “for loop” in draw_lane_lines(). This could be improved by creating a numpy implementation, as it is run in C, which is significantly fasted.
+
