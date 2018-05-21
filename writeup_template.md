@@ -4,6 +4,8 @@
 
 **Finding Lane Lines on the Road**
 
+<img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
+
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on the project
