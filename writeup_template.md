@@ -20,15 +20,15 @@ The goals / steps of this project are the following:
 ### 1. Pipeline Description
 
 Steps Involved
-* 1. import colored image
-* 2. transform colored image to gray scale
-* 3. set kernal size
-* 4. apply gaussian blur
-* 5. set low and high thresholds
-* 6. apply canny transform
-* 7. select region of interest
-* 8. Set params for hough transform & draw lines
-* 9. return AddWeighted
+1. import colored image
+2. transform colored image to gray scale
+3. set kernal size
+4. apply gaussian blur
+5. set low and high thresholds
+6. apply canny transform
+7. select region of interest
+8. Set params for hough transform & draw lines
+9. return AddWeighted
 
 
 The main approached in this project was to detect lane lines on a road. This was acheived primarily through OpenCv's Canny Edge Detection, and Hough Line Transform. 
