@@ -41,7 +41,7 @@ Within hough_lines() a function called draw_lines() was responsible for drawing 
 Then using the formula y = mx + c, the slope(m), y-intercept(b), y-value(y), and x-value(x) were calculated in order to draw lines over the left & right lanes on the image. 
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Potential Shortcomings of my Pipeline() Implementation
 
 One of the issues of this approach is that it performs poorly when the road curves as the line being drawn is straight. This results in a very inaccurate representation of the road lanes. 
 
@@ -50,7 +50,7 @@ Another shortcoming is that changes in road color can have a negative impact on 
 Furthermore, this approach does not take lane changes into account as the region of interest selects the area in-front of the car where the lane lines are present. If the car did change lanes, lines would either be poorly drawn or not at all.
 
 
-### 3. Suggest possible improvements to your pipeline
+### 3. Suggested Improvements for my Pipeline() Implementation
 
 A possible improvement would be to use color detection and color ranges to create a mask, then apply Canny Edge Detection. This would allow for better lane detection. However, this still leaves the issue of curved lines when the road turns. One possible way to reduce the error would be to order the points gathered by hough_lines() then split the data into a series of sections. Then calculate the same y = mx + c line, find its mid-point and store it. Using the series of mid-points, you would then be able to draw a polynomial best fit line.
 
