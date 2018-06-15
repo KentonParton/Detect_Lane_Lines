@@ -24,7 +24,7 @@ The goals / steps of this project are the following:
 Steps Involved
 1. import colored image
 2. transform colored image to gray scale
-3. set kernal size
+3. set kernel size
 4. apply gaussian blur
 5. set low and high thresholds
 6. apply canny transform
