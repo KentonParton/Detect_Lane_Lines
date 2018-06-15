@@ -24,3 +24,6 @@ If you use anaconda, you can launch Jupyterlab/Jupyter Notebook in Anaconda Navi
 '>jupyter notebook'
 
 A browser window will appear showing the contents of the current directory.  Click on the file called "find_lane_lines.ipynb".
+
+
+For information on the implementation of the project, please see the write_up.md.
